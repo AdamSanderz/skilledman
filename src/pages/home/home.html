@@ -1,14 +1,47 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ورود</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content class="login-content" padding>
+  <ion-grid>
+    <ion-row class="loginlogo" text-center>
+      <img src="assets/img/logo_login.png">
+    </ion-row>
+  </ion-grid>
+
+
+  <div class="login-box">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+
+            <ion-item>
+              <ion-input type="text" placeholder="موبایل" name="mobile" [(ngModel)]="registerCredentials.mobile" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="password" placeholder="رمز عبور" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <!--<button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">ورود</button>-->
+          <button ion-button class="submit-btn" full type="submit" (click)="login()" [disabled]="!registerForm.form.valid">ورود</button>
+
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </div>
 </ion-content>

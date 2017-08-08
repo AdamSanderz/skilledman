@@ -1,3 +1,36 @@
 page-home {
+  .content-md {
+    background-color: #59adaf;
+  }
+  .toolbar-background-md {
+    background: #ff7372;
+  }
+
+  img {  max-width: 140%;  }
+
+  .button-md {
+    background-color: #ff7372;
+  }
+
+  ion-row > div {
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  .button1 {
+    width: 100%;
+  }
+
+  .col1 {
+    text-align: center;
+  }
+
+  .register-btn {
+    color: #ffffff;
+    font-size: 0.8em;
+  }
+
+  .loginlogo{display: inline-block;}
+  .loginlogo img{max-height:100px;}
 
 }
