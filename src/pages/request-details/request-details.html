@@ -13,8 +13,22 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding="true">
   <ion-card>
     {{selectedItem.message}}
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3 offset-4>
+          <button ion-button color="secondary">
+            <ion-icon name="checkmark-circle" (click)="onAccept()">  قبول</ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-5>
+          <button ion-button color="danger">
+            <ion-icon name="close-circle" (click)="onRefuse()"> انصراف</ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 </ion-content>

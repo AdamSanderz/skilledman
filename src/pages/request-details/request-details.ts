@@ -23,8 +23,15 @@ export class RequestDetailsPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RequestDetailsPage');
+
+
+  onAccept(){
+
+  }
+
+
+  onRefuse(){
+
   }
 
 }

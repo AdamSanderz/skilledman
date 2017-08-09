@@ -3,6 +3,7 @@ import {NavController, LoadingController, AlertController, Loading} from 'ionic-
 import {Http, Headers, RequestOptions} from "@angular/http";
 import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/map';
+import {RequestsPage} from "../requests/requests";
 
 @Component({
   selector: 'page-home',
@@ -39,14 +40,24 @@ export class HomePage {
 
     };
 
-    this.http.post("http://127.0.0.1:9000/api/users/newlogin", postParams, options)
+    this.http.post("http://127.0.0.1:8080/api/users/login", postParams, options)
       .map(res => res.json())
       .subscribe(data => {
+        /*if (data.status == true){
+
+        }*/
         console.log(data);
       }, error => {
         console.log(error);// Error getting the data
       });
   }
+
+  loginTapped(event, item) {
+    this.navCtrl.push(RequestsPage, {
+      item: item
+    });
+  }
+
 
 
   showLoading() {

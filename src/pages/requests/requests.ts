@@ -21,7 +21,7 @@ export class RequestsPage {
   items;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    this.loadAllTheRequests();
+    this.loadALL();
   }
 
 
@@ -32,48 +32,35 @@ export class RequestsPage {
     headers.append('API_KEY', 'YXV0b2FwcGFwaWtleTEyMzQ1Ng==');
     let options = new RequestOptions({headers: headers});
 
-    /*let postParams = {
-      user_id: 2,
-      form_id: 1,
-      value: this.skiledman,
-      title: 'درخواست کارشناس'
 
-    };*/
     return new Promise(resolve => {
-      this.http.get('http://127.0.0.1:9000/api/forms/1/submissions', options)
+      this.http.get('http://127.0.0.1:8080/api/forms/1/submissions', options)
         .map(res => res.json())
         .subscribe(results => {
+          // console.log(results);
           this.items = results.result;
+          // console.log(this.items);
           resolve(this.items);
         })
-    })
-      .then(data => {
-        this.items = data;
-        let all_items: any =[];
-        for (var key in this.items){
-          if (this.items.hasOwnProperty(key)){
-            var element = this.items[key].value;
-          }
+    });
+  }
 
-          all_items.push(element);
-          // console.log(all_items);
+  loadALL(){
+    this.loadAllTheRequests().then(data => {
+      this.items = data;
+      let all_items: any =[];
+      for (var key in this.items){
+        if (this.items.hasOwnProperty(key)){
+          var element = this.items[key].value;
         }
-        this.items = all_items;
-        console.log(this.items);
 
-      })
-  }
+        all_items.push(element);
+        // console.log(all_items);
+      }
+       this.items = all_items;
 
-
-
-
-
-  onAccept() {
-    console.log('accepted the request');
-  }
-
-  onRefuse() {
-    console.log('refused the request');
+      console.log(this.items);
+    })
   }
 
 

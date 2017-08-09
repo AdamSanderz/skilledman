@@ -20,7 +20,15 @@ import {RequestDetailsPage} from "../pages/request-details/request-details";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '',
+      backButtonIcon: "ios-arrow-forward-outline",
+      iconMode: 'ios',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      tabsPlacement: 'bottom',
+      pageTransition: 'ios-transition'
+    }),
     HttpModule,
     IonicStorageModule.forRoot()
   ],
