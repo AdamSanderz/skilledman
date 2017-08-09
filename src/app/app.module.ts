@@ -8,11 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {HttpModule} from "@angular/http";
 import {IonicStorageModule} from "@ionic/storage";
+import {RequestsPage} from "../pages/requests/requests";
+import {RequestDetailsPage} from "../pages/request-details/request-details";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    RequestsPage,
+    RequestDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,9 @@ import {IonicStorageModule} from "@ionic/storage";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    RequestsPage,
+    RequestDetailsPage
   ],
   providers: [
     StatusBar,

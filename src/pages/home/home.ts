@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NavController, LoadingController, AlertController, Loading} from 'ionic-angular';
 import {Http, Headers, RequestOptions} from "@angular/http";
 import { Storage } from '@ionic/storage';
@@ -9,12 +9,15 @@ import 'rxjs/add/operator/map';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  @ViewChild('myNav') nav: NavController;
+
   loading: Loading;
   registerCredentials = {mobile: '',email: '', password: '', response: ''};
 
 
   constructor(public navCtrl: NavController, public http: Http, public loadingCtrl: LoadingController, public storage: Storage, public alertCtrl: AlertController) {
     this.checkuser();
+
   }
 
 
@@ -36,7 +39,7 @@ export class HomePage {
 
     };
 
-    this.http.post("http://127.0.0.1:8000/api/users/newlogin", postParams, options)
+    this.http.post("http://127.0.0.1:9000/api/users/newlogin", postParams, options)
       .map(res => res.json())
       .subscribe(data => {
         console.log(data);
