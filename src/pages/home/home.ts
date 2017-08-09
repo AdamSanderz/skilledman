@@ -40,7 +40,7 @@ export class HomePage {
 
     };
 
-    this.http.post("http://127.0.0.1:8080/api/users/login", postParams, options)
+    this.http.post("http://127.0.0.1:8888/api/users/login", postParams, options)
       .map(res => res.json())
       .subscribe(data => {
         /*if (data.status == true){

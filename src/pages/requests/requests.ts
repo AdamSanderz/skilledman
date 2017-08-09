@@ -34,7 +34,7 @@ export class RequestsPage {
 
 
     return new Promise(resolve => {
-      this.http.get('http://127.0.0.1:8080/api/forms/1/submissions', options)
+      this.http.get('http://127.0.0.1:8888/api/forms/1/submissions', options)
         .map(res => res.json())
         .subscribe(results => {
           // console.log(results);
