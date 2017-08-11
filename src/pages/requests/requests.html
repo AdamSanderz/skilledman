@@ -16,10 +16,21 @@
 <ion-content padding="true">
   <ion-list>
 
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, vendor)">
-        <h4>{{item.message}}</h4>
-        <h4>{{item.picktime}}</h4>
-      <h2>{{item.subject}}</h2>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-card padding>
+        <h2>Title: {{ item.subject }}</h2>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3 offset-5>
+              <h4>Message: {{ item.message }}</h4>
+            </ion-col>
+            <ion-col col-4>
+              <p>Time: {{item.picktime}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card>
     </button>
 
   </ion-list>
