@@ -40,7 +40,7 @@ export class RequestsPage {
 
     };*/
     return new Promise(resolve => {
-      this.http.get('http://127.0.0.1:9000/api/forms/1/submissions', options)
+      this.http.get('http://autoapp/api/forms/1/submissions', options)
         .map(res => res.json())
         .subscribe(results => {
           this.items = results.result;
