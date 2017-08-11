@@ -18,14 +18,14 @@
 
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-card padding>
-        <h2>Title: {{ item.subject }}</h2>
+        <h2>عنوان:<p>{{ item.subject }}</p></h2>
         <ion-grid>
           <ion-row>
             <ion-col col-3 offset-5>
-              <h4>Message: {{ item.message }}</h4>
+              <h4>پیام:<p>{{ item.message }}</p></h4>
             </ion-col>
             <ion-col col-4>
-              <p>Time: {{item.picktime}}</p>
+              <h4>زمان:<p>{{ item.picktime }}</p></h4>
             </ion-col>
           </ion-row>
         </ion-grid>

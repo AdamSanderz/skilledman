@@ -10,6 +10,7 @@ import {HttpModule} from "@angular/http";
 import {IonicStorageModule} from "@ionic/storage";
 import {RequestsPage} from "../pages/requests/requests";
 import {RequestDetailsPage} from "../pages/request-details/request-details";
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {RequestDetailsPage} from "../pages/request-details/request-details";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceProvider,
   ]
 })
 export class AppModule {}
